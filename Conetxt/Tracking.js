@@ -3,7 +3,7 @@ import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 //INTERNAL IMPORT
 import tracking from "./Tracking.json";
-const ContractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+const ContractAddress = "0xf4a5e465ef794aEaf62AcBFdAC20700CEcD84aC7";
 const ContractABl = tracking.abi;
 //---FETCHING SMART CONTRACT
 const fetchContract = (signerOrProvider) =>
