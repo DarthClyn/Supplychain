@@ -90,7 +90,7 @@ const createItem = async () =>{
    onChange={(e) => setShipment({...shipment, price: e.target.value,})}
    />
    </div>
-   <button onClick={()=> createItem(}
+   <button onClick={()=>  createItem()}
   className="block w-full mt-3 py-3 px-4 font-medium text-sm text-center
    text-white bg-indigo-600 hover:bg-inidgo-500 active:bg-indigo-700rounded-lg
     ring-offset-2 ring-indigo-600 focus:ring-2"
