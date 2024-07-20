@@ -85,3 +85,4 @@ export default ({ setCreateShipmentModel, allShipmentsdata }) => {
     </div>
   );
 };
+ 
