@@ -53,6 +53,8 @@ const index = () => {
       setCreateShipmentModel={setCreateShipmentModel}/>
 
       <Table
+      setCreateShipmentModel={setCreateShipmentModel}
+      
       allShipmentsdata={allShipmentsdata}
       />
 
