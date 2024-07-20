@@ -3,7 +3,7 @@ import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 //INTERNAL IMPORT
 import tracking from "./Tracking.json";
-const ContractAddress = "0xf4a5e465ef794aEaf62AcBFdAC20700CEcD84aC7";
+const ContractAddress = "0x015bd24e317BcdAdD41cD1Fc5CC9E8FCa9c15e9D";
 const ContractABl = tracking.abi;
 //---FETCHING SMART CONTRACT
 const fetchContract = (signerOrProvider) =>
@@ -44,7 +44,9 @@ export const TrackingProvider = ({ children }) => {
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
       });
-      const provider = new ethers.providers.JsonRpcProvider();
+      const web3Modal = new Web3Modal();
+      const connection = await web3Modal.connect();
+      const provider = new ethers.providers.Web3Provider(connection);
       const contract = fetchContract(provider);
       const shipments = await contract.getAllTransactions();
 
@@ -70,7 +72,9 @@ export const TrackingProvider = ({ children }) => {
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
       });
-        const provider = new ethers.providers.JsonRpcProvider();
+      const web3Modal = new Web3Modal();
+      const connection = await web3Modal.connect();
+        const provider = new ethers.providers.Web3Provider(connection);
         const contract = fetchContract(provider);
         const shipments = await contract.getShipmentsCounts(accounts[0]);
   
